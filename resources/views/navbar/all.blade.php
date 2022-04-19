@@ -9,7 +9,7 @@
     <!-- plugins:css -->
     <link rel="stylesheet" href="public/../node_modules/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="public/../node_modules/perfect-scrollbar/dist/css/perfect-scrollbar.min.css">
-    <link href="{{asset('css/app.css')}}" rel="stylesheet">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <!--Añadimos el css generado con webpack-->
     <!-- endinject -->
     <!-- plugin css for this page -->
@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="public/css/style.css">
     <!-- endinject -->
     <link rel="shortcut icon" href="public/images/favicon.png" />
+    @yield('js')
 </head>
 
 <body>
@@ -78,12 +79,13 @@
             methods: {
                 add: function() {
                     this.nombreAlimento = "",
-                    this.precioAlimento = "",
-                    this.fotoAlimento =  ""
+                        this.precioAlimento = "",
+                        this.fotoAlimento = ""
                 }
             }
         })
     </script>
+    @yield('java')
 </body>
 
 </html>

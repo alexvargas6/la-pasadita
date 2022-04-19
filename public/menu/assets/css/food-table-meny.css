@@ -1,0 +1,28 @@
+.menu-item {
+  color: rgb(0,0,0);
+  padding: 10px 30px;
+  margin: 6px 0;
+  background-color: #ffffff;
+}
+
+.menu-item .price {
+  font-weight: 700;
+  float: right;
+}
+
+.mitt {
+  font-size: 11px;
+}
+
+.table thead th {
+  border: none;
+}
+
+.rubrik-span {
+  font-size: 15px;
+}
+
+.border {
+  border: 0px solid #dee2e6!important;
+}
+

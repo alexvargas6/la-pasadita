@@ -18,3 +18,6 @@ Route::get('/', function () {
 });
 
 Route::get('/mod', 'menu@showMod')->name('verMod');
+Route::get('/ver', 'menuControl@onlin');
+Route::get('/verMenu', 'menuControl@verMenu')->name('verMen');
+Route::post('/generar', 'menuControl@generarMenul')->name('generarMenu');
