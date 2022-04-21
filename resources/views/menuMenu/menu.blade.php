@@ -54,16 +54,17 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($va as $com)
-                                            <tr>
-                                                <td class="menu-item"
-                                                    style="background: rgba(255,255,255,0);border-top-width: 0px;">
-                                                    {{ $com }}<span class="price"
-                                                        style="color: #d35256;">${{ $com }}
-                                                        <img src="{{ $com }}"></span>
-                                                </td>
-                                            </tr>
-                                        @endforeach
+
+                                        <tr>
+                                            <td class="menu-item"
+                                                style="background: rgba(255,255,255,0);border-top-width: 0px;">
+                                                Frijol con puerco<span class="price"
+                                                    style="color: #d35256;">$60
+                                                    <img height="100" width="100"
+                                                        src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2Fff%2F20%2F0b%2Fff200b4d5fc0b516f049aecd5b505bcb.jpg&f=1&nofb=1"></span>
+                                            </td>
+                                        </tr>
+
                                         <tr></tr>
                                     </tbody>
                                 </table>
