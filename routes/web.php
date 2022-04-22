@@ -21,3 +21,7 @@ Route::get('/mod', 'menu@showMod')->name('verMod');
 Route::get('/ver', 'menuControl@onlin');
 Route::get('/verMenu', 'menuControl@verMenu')->name('verMen');
 Route::post('/generar', 'menuControl@generarMenul')->name('generarMenu');
+Route::post('/subir/comida', 'menuControl@storeFood')->name('storeFood');
+route::get('/addFood', 'menuControl@añadirAlimento')->name('addFood');
+route::get('/modificar', 'menuControl@verMod')->name('upd');
+Route::post('/update/food', 'menuControl@upFood')->name('upFood');

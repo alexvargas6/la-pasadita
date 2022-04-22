@@ -16,6 +16,7 @@ class CreateMenuHoysTable extends Migration
         Schema::create('menu_hoys', function (Blueprint $table) {
             $table->id();
             $table->foreignId('menu')->constrained('comidas')->nullable();
+            $table->integer('activo');
             $table->timestamps();
         });
     }

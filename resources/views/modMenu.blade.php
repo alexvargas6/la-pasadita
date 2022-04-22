@@ -57,6 +57,20 @@
     <div class="col-lg-12 stretch-card">
         <div class="card">
             <div class="card-body">
+                @if (\Session::has('success'))
+                    <div class="alert alert-success">
+                        <ul>
+                            <li>{!! \Session::get('success') !!}</li>
+                        </ul>
+                    </div>
+                @endif
+                @if (\Session::has('ERROR'))
+                    <div class="alert alert-warning">
+                        <ul>
+                            <li>{!! \Session::get('ERROR') !!}</li>
+                        </ul>
+                    </div>
+                @endif
                 <h4 class="card-title">Menú de hoy</h4>
                 <p class="card-description">
                     Captura las <code>comidas de hoy</code>
@@ -82,29 +96,26 @@
                             </tr>
                         </thead>
                         <tbody>
+                            @foreach ($food as $comida)
+                                <tr>
+                                    <td>
+                                        <input class="form-check-input" type="checkbox" value="{{ $comida->id }}"
+                                            name="comida[]">
+                                    </td>
+                                    <td>{{ $comida->comida }}</td>
+                                    <td>entera:{{ $comida->precio }} | media: {{ $comida->media }} </td>
+                                    <td><img height="100" width="100" src="{{ $comida->foto }}"
+                                            alt="{{ $comida->comida }}">
+                                    </td>
+                                </tr>
+                            @endforeach
 
                         </tbody>
                     </table>
                     <br>
                     <button type="submit" class="btn btn-success mr-2">Generar menú</button>
                 </form>
-                <!--Añadimos nuestro componente vuejs-->
-                <div class="mb-3">
-                    <label for="name1" class="form-label">Nombre</label>
-                    <input type="text" class="form-control" id="name1" v-model="nombreAlimento"
-                        placeholder="Frijo con puerco, but negro, etc." name="aliment">
-                </div>
-                <div class="mb-3">
-                    <label for="precio1" class="form-label">Precio</label>
-                    <input type="number" class="form-control" id="precio1" v-model="precioAlimento" placeholder="$0.00">
-                </div>
-                <div class="mb-3">
-                    <label for="Foto1" class="form-label">Foto</label>
-                    <input id="Foto1" type="file" accept="image/*" capture="camera" v-model="fotoAlimento"
-                        placeholder="foto">
-                </div>
-                <INPUT type="button" value="Añadir" onclick="agregarFila();" />
-                <INPUT type="button" value="Eliminar comida" onclick="deleteRow('dataTable');" />
+
             </div>
         </div>
     </div>
